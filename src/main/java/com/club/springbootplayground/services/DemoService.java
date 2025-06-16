@@ -25,6 +25,10 @@ public class DemoService implements IDemoService {
         return "<h1>Hello World!! from Demo Service </h1>";
     }
 
+    public DemoEntity getDemoEntity() {
+        return demoEntity;
+    }
+
     private void setDemoEntity(DemoEntity demoEntity) {
         this.demoEntity = demoEntity;
     }

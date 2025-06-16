@@ -2,10 +2,11 @@ package com.club.springbootplayground.entities;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // This bean will be created as a prototype
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS) // This bean will be created as a prototype
 public class DemoEntity {
     private static int instanceCount = 0;
     private String name = "Default Name";
