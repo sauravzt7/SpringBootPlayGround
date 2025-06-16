@@ -1,5 +1,6 @@
 package com.club.springbootplayground;
 
+import com.club.springbootplayground.entities.DemoEntity;
 import com.club.springbootplayground.services.DemoService;
 import com.club.springbootplayground.services.DupDemoService;
 import com.club.springbootplayground.services.IDemoService;
@@ -19,13 +20,18 @@ public class SpringBootPlaygroundApplication {
 //        }
 
 //        IDemoService demoServiceInterface = appContext.getBean("demoServiceInterface", IDemoService.class);
-        DemoService demoService = appContext.getBean("demoService", DemoService.class);
-        DemoService demoService1 = appContext.getBean("demoService", DemoService.class);
+        IDemoService demoService = appContext.getBean("demoService", DemoService.class);
+        IDemoService demoService1 = appContext.getBean("demoService", DemoService.class);
+        IDemoService demoService2 = appContext.getBean("demoService", DemoService.class);
 
         // For Each getBean call, a new instance of DemoService is created because it is defined as prototype scope.
-        DupDemoService dupDemoService = appContext.getBean("dupDemoService", DupDemoService.class);
+//        DupDemoService dupDemoService = appContext.getBean("dupDemoService", DupDemoService.class);
         System.out.println("DemoService: " + demoService);
         System.out.println("DemoService1: " + demoService1);
+//        DemoEntity demoEntity = appContext.getBean("demoEntity", DemoEntity.class);
+//        System.out.println("DemoEntity: " + demoEntity);
+//        DemoEntity demoEntity1 = appContext.getBean("demoEntity", DemoEntity.class);
+//        System.out.println("DemoEntity1: " + demoEntity1);
 
 
 
